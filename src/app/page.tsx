@@ -1,9 +1,11 @@
+import BudgetCard from "@/components/BudgetCard";
+
 export default function Home() {
   return (
     <div className="">
       <main className="">
         <div>header</div>
-        <div>budgetCard</div>
+        <BudgetCard />
       </main>
     </div>
   );
