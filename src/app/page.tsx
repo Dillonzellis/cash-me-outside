@@ -1,6 +1,6 @@
 "use client";
 
-import { SignIn, SignInButton, useUser } from "@clerk/nextjs";
+import { SignIn, useUser } from "@clerk/nextjs";
 
 export default function Home() {
   const { isSignedIn } = useUser();
