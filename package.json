@@ -7,9 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "tsx src/db/seed.ts"
+    "seed": "tsx src/db/seed.ts",
+    "studio": "npx drizzle-kit studio",
+    "db:reset": "tsx src/db/reset-db.ts",
+    "db:setup": "npm run db:reset && npx drizzle-kit generate && npx drizzle-kit migrate && npm run db:seed"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.30.0",
     "@neondatabase/serverless": "^1.0.1",
     "dotenv": "^17.0.1",
     "drizzle-orm": "^0.44.2",
