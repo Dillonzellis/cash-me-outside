@@ -1,17 +1,18 @@
-"use client";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import { SignIn } from "@clerk/nextjs";
 
-import { SignIn, useUser } from "@clerk/nextjs";
+export default async function HomePage() {
+  const { userId } = await auth();
 
-export default function Home() {
-  const { isSignedIn } = useUser();
-
-  if (!isSignedIn) {
-    return <SignIn />;
+  if (userId) {
+    redirect("/dashboard");
   }
 
   return (
-    <div className="">
-      <main className="">Youre In</main>
+    <div>
+      <h1>Welcome to EveryDollar Clone</h1>
+      <SignIn />
     </div>
   );
 }
